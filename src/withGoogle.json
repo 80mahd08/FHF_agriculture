@@ -1,0 +1,52 @@
+{
+  "user": {
+    "uid": "oLBo0lYV8VQFFgG2ZvX4GwfCsc12",
+    "email": "amari.mahdi.2022@gmail.com",
+    "emailVerified": true,
+    "displayName": "mahdi amari",
+    "isAnonymous": false,
+    "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIj_ZuWfNv3kplZuzrhiklKsS9KooWRKmjQLoB1UVrHuqQEpQY=s96-c",
+    "providerData": [
+      {
+        "providerId": "google.com",
+        "uid": "110521749716847987066",
+        "displayName": "mahdi amari",
+        "email": "amari.mahdi.2022@gmail.com",
+        "phoneNumber": null,
+        "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIj_ZuWfNv3kplZuzrhiklKsS9KooWRKmjQLoB1UVrHuqQEpQY=s96-c"
+      }
+    ],
+    "stsTokenManager": {
+      "refreshToken": "AMf-vBwM-oN7D2_p1b4sxyBYjWh9XQGSwfISvoxljj0v1OEos7tTU_Z0-_l3BgJeKsvgN6GU1xteE1-21i2Xo59Ix5_VO_OHOYDQDA9jm4l8gfPvGaeN_1E6Vc99afdVP5D339saN-e6lX4oWhZAECJ_t6uDM3TdMtOCWYpYboo_4ft5ii1KothYbvguOxhCrMChEwtdysQybChNkz980jcrhU5cesE1F7yJA-6h24vbHun8DAi7XlgO7G87mDtqDIh2KhWx0_V25EfSOdvd_kcN6Z83U3Y0MJ4pdo0IMUrI0nyOn-yCh0XsoDEkI8v8cySm5VyTuftKa4Jkq1QYQgy1dUhM6iMeZfAE2Gh3cqC7B6YNkIQoQtFlrQmVMg4OL7wxZrU-eXQWjgI_vr2ym3yFBoueuzWcqaGPx-ch4FWNrWmkZpDB5xc_MfZjtqTTTwRD2mxsbyPU",
+      "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImEyMzhkZDA0Y2JhYTU4MGIzMDRjODgxZTFjMDA4ZWMyOGZiYmFkZGMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoibWFoZGkgYW1hcmkiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSWpfWnVXZk52M2twbFp1enJoaWtsS3NTOUtvb1dSS21qUUxvQjFVVnJIdXFRRXBRWT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heW1lbi1heml6LWRldi1tb2RlIiwiYXVkIjoiYXltZW4tYXppei1kZXYtbW9kZSIsImF1dGhfdGltZSI6MTcxNDU1NzU3MywidXNlcl9pZCI6Im9MQm8wbFlWOFZRRkZnRzJadlg0R3dmQ3NjMTIiLCJzdWIiOiJvTEJvMGxZVjhWUUZGZ0cyWnZYNEd3ZkNzYzEyIiwiaWF0IjoxNzE0NTU3NTczLCJleHAiOjE3MTQ1NjExNzMsImVtYWlsIjoiYW1hcmkubWFoZGkuMjAyMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjExMDUyMTc0OTcxNjg0Nzk4NzA2NiJdLCJlbWFpbCI6WyJhbWFyaS5tYWhkaS4yMDIyQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.Xq-LyBQga3169s7OfgeH39-CNJztqFKkgC0qtcyrmQRI2fTGr6yVwQJz_jWEqO5XqteFjbE9lhH6eonzkF1wK3yFHXYrZ99rng8kglwsq7RX4LX0UL63I4V1RsSVNNYS-v1lQ8DHcP6NottAvD2P0aRPf9-ejfT4hE10MHfqoXIj3qfHjJy-JQepq1Q6oiNBvipADPoucTW0cMba0kHZ-F3vL5ntXoU6ouD-4LQg54S1w306Ntw4pgrwuTnZi8xq7f4uBUp8kXrgP5Th94GG2Kop9HYS-LqitiKuSlMm0ojiqpyJn5x7Xda8wglGyqh1HDMV1y6ppwwAB9uDkJHHbw",
+      "expirationTime": 1714604482766
+    },
+    "createdAt": "1714222454241",
+    "lastLoginAt": "1714557573225",
+    "apiKey": "AIzaSyC8mCOy2OHHe8dCoDhYv2jdBtgJJmQvzos",
+    "appName": "[DEFAULT]"
+  },
+  "providerId": "google.com",
+  "_tokenResponse": {
+    "federatedId": "https://accounts.google.com/110521749716847987066",
+    "providerId": "google.com",
+    "email": "amari.mahdi.2022@gmail.com",
+    "emailVerified": true,
+    "firstName": "mahdi",
+    "fullName": "mahdi amari",
+    "lastName": "amari",
+    "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIj_ZuWfNv3kplZuzrhiklKsS9KooWRKmjQLoB1UVrHuqQEpQY=s96-c",
+    "localId": "oLBo0lYV8VQFFgG2ZvX4GwfCsc12",
+    "displayName": "mahdi amari",
+    "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImEyMzhkZDA0Y2JhYTU4MGIzMDRjODgxZTFjMDA4ZWMyOGZiYmFkZGMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoibWFoZGkgYW1hcmkiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSWpfWnVXZk52M2twbFp1enJoaWtsS3NTOUtvb1dSS21qUUxvQjFVVnJIdXFRRXBRWT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9heW1lbi1heml6LWRldi1tb2RlIiwiYXVkIjoiYXltZW4tYXppei1kZXYtbW9kZSIsImF1dGhfdGltZSI6MTcxNDU1NzU3MywidXNlcl9pZCI6Im9MQm8wbFlWOFZRRkZnRzJadlg0R3dmQ3NjMTIiLCJzdWIiOiJvTEJvMGxZVjhWUUZGZ0cyWnZYNEd3ZkNzYzEyIiwiaWF0IjoxNzE0NTU3NTczLCJleHAiOjE3MTQ1NjExNzMsImVtYWlsIjoiYW1hcmkubWFoZGkuMjAyMkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjExMDUyMTc0OTcxNjg0Nzk4NzA2NiJdLCJlbWFpbCI6WyJhbWFyaS5tYWhkaS4yMDIyQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.Xq-LyBQga3169s7OfgeH39-CNJztqFKkgC0qtcyrmQRI2fTGr6yVwQJz_jWEqO5XqteFjbE9lhH6eonzkF1wK3yFHXYrZ99rng8kglwsq7RX4LX0UL63I4V1RsSVNNYS-v1lQ8DHcP6NottAvD2P0aRPf9-ejfT4hE10MHfqoXIj3qfHjJy-JQepq1Q6oiNBvipADPoucTW0cMba0kHZ-F3vL5ntXoU6ouD-4LQg54S1w306Ntw4pgrwuTnZi8xq7f4uBUp8kXrgP5Th94GG2Kop9HYS-LqitiKuSlMm0ojiqpyJn5x7Xda8wglGyqh1HDMV1y6ppwwAB9uDkJHHbw",
+    "context": "",
+    "oauthAccessToken": "ya29.a0Ad52N38ipBkC1fs-taXDXOug1NRlMvEFJdEFCKXj8ANTseoEtDKFDmm6g2Wjw_YGC2DzxYmdwJQ5unsQpElHLyFFux3wNK-LtzVvlrNghO2_8c7zyEINkbnssZ0EFe8HmOfP71TLPxWdFSffB417g22GlMUN3mW0xwaCgYKAQ8SARESFQHGX2MiXCuLtjBNVLq5eLTmns70Rw0169",
+    "oauthExpireIn": 3598,
+    "refreshToken": "AMf-vBwM-oN7D2_p1b4sxyBYjWh9XQGSwfISvoxljj0v1OEos7tTU_Z0-_l3BgJeKsvgN6GU1xteE1-21i2Xo59Ix5_VO_OHOYDQDA9jm4l8gfPvGaeN_1E6Vc99afdVP5D339saN-e6lX4oWhZAECJ_t6uDM3TdMtOCWYpYboo_4ft5ii1KothYbvguOxhCrMChEwtdysQybChNkz980jcrhU5cesE1F7yJA-6h24vbHun8DAi7XlgO7G87mDtqDIh2KhWx0_V25EfSOdvd_kcN6Z83U3Y0MJ4pdo0IMUrI0nyOn-yCh0XsoDEkI8v8cySm5VyTuftKa4Jkq1QYQgy1dUhM6iMeZfAE2Gh3cqC7B6YNkIQoQtFlrQmVMg4OL7wxZrU-eXQWjgI_vr2ym3yFBoueuzWcqaGPx-ch4FWNrWmkZpDB5xc_MfZjtqTTTwRD2mxsbyPU",
+    "expiresIn": "3600",
+    "oauthIdToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFjM2UzZTU1ODExMWM3YzdhNzVjNWI2NTEzNGQyMmY2M2VlMDA2ZDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiOTU2NDgxNTU4NzIzLWhvcmFyMmZrY2pvOGFtOHZnNmlwN203bDBnb3RuMGZjLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiOTU2NDgxNTU4NzIzLWhvcmFyMmZrY2pvOGFtOHZnNmlwN203bDBnb3RuMGZjLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwNTIxNzQ5NzE2ODQ3OTg3MDY2IiwiZW1haWwiOiJhbWFyaS5tYWhkaS4yMDIyQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiTDdVLUhEY29UR1pDaWFxRFBtN0VzQSIsImlhdCI6MTcxNDU1NzU3MywiZXhwIjoxNzE0NTYxMTczfQ.HBMJ5RjY1o8LNWriy9XPBzK9hgyWzG0thAvkmNsMNofunVl4gTH_YEPqTT6uMN5zU0MEPyRGlixgy4eEN7YgD-YgSQ05oXDx7B3vQgARVwPd-oMJ3wwAGXqe4v-d46DkVLCpjm8PU-T21DHnDYtpKKi-EgX841hjc8gArhENuOpuwa3iahWxvxNdlKjtcL0oc4x1qVsTCT3ii_lc7qvQhOuGMIZ2cL-NsE-_nPAktRp97CghaY0ua8z7Qr8Do3K719_cMBaJaLRujTo2AlgkZ8W1PdQVFFpmQtpfPERTUssTdNgsr6HNzCDG8uIwNZUD6TG_mnd0QLupzVBFUGfxAQ",
+    "rawUserInfo": "{\"name\":\"mahdi amari\",\"granted_scopes\":\"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid\",\"id\":\"110521749716847987066\",\"verified_email\":true,\"given_name\":\"mahdi\",\"locale\":\"fr\",\"family_name\":\"amari\",\"email\":\"amari.mahdi.2022@gmail.com\",\"picture\":\"https://lh3.googleusercontent.com/a/ACg8ocIj_ZuWfNv3kplZuzrhiklKsS9KooWRKmjQLoB1UVrHuqQEpQY=s96-c\"}",
+    "kind": "identitytoolkit#VerifyAssertionResponse"
+  },
+  "operationType": "signIn"
+}
