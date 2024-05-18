@@ -20,7 +20,7 @@ const CreateOne = ({ type }) => {
 			COUNT: "mousemCount",
 			START: "mousemStart",
 			FIN: "mousemFin",
-			PRIX: "mouemFin",
+			PRIX: "mousemPrix",
 		},
 	};
 
@@ -91,6 +91,7 @@ const CreateOne = ({ type }) => {
 		e.preventDefault();
 		const formData = new FormData(e.target);
 		const data = Object.fromEntries(formData.entries());
+		console.log(data);
 		if (validateFn(data)) {
 			submitData(type, data);
 			Swal.fire({

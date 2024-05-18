@@ -30,26 +30,13 @@ function Dwa() {
 }
 
 const DisplayComp = ({ obj }) => {
-	const formatDate = (timestamp) => {
-		if (!timestamp) {
-			return "Invalid date";
-		}
-		try {
-			const date = timestamp.toDate();
-			return date.toLocaleDateString();
-		} catch (error) {
-			console.error("Error formatting date:", error);
-			return "Invalid date";
-		}
-	};
-
 	return (
 		<tr>
 			<td>{obj.dwaName}</td>
 			<td>{obj.dwaType}</td>
 			<td>{obj.dwaElkmiya}</td>
-			<td>{formatDate(obj.dwaDateStart)}</td>
-			<td>{formatDate(obj.dwaDateFin)}</td>
+			<td>{obj.dwaDateStart}</td>
+			<td>{obj.dwaDateFin}</td>
 		</tr>
 	);
 };
