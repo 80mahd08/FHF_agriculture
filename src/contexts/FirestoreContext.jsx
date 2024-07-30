@@ -26,8 +26,6 @@ export function FirestoreProvider({ children }) {
 	const query = collection(db, `/agri/${currentUser.uid}/${pageName}/`);
 	const [snapshot, loadingFirestore, error] = useCollectionData(query);
 
-	console.log(snapshot);
-
 	useEffect(() => {
 		setLoading(loadingFirestore !== undefined ? loadingFirestore : true);
 		if (snapshot) {
@@ -37,6 +35,7 @@ export function FirestoreProvider({ children }) {
 	}, [loadingFirestore, snapshot, currentUser.uid]); // Include loadingFirestore and snapshot in the dependency array
 
 	const submitData = async (type, data) => {
+		setLoading(true);
 		let queryRef;
 		let prevData;
 
@@ -69,6 +68,7 @@ export function FirestoreProvider({ children }) {
 				console.error("Error adding document: ", error);
 			}
 		}
+		setLoading(false);
 	};
 
 	const value = {

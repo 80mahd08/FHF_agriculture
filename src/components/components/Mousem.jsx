@@ -1,44 +1,57 @@
 import React from "react";
 import { useFirestore } from "../../contexts/FirestoreContext";
 import CreateOne from "../CreateOne";
+import {
+	Table,
+	Thead,
+	Tbody,
+	Tr,
+	Th,
+	Td,
+	TableContainer,
+} from "@chakra-ui/react";
 
 function Mousem() {
 	const { pageName, displayArrayMousem } = useFirestore();
 	return (
-		<div className="table-div">
-			<h1>maw3ed mousem of {pageName}</h1>
-			<table border={1}>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Num</th>
-						<th>Count</th>
-						<th>Start</th>
-						<th>Fin</th>
-						<th>Prix</th>
-					</tr>
-				</thead>
-				<tbody>
-					{Object.keys(displayArrayMousem).map((key) => (
-						<DisplayComp key={key} obj={displayArrayMousem[key]} />
-					))}
-				</tbody>
-			</table>
+		<>
+			<div className="table-div">
+				<h1>maw3ed mousem of {pageName}</h1>
+				<TableContainer>
+					<Table border={2} variant="striped" colorScheme="rgb(182, 157, 230)">
+						<Thead>
+							<Tr>
+								<Th>Name</Th>
+								<Th>Num</Th>
+								<Th>Count</Th>
+								<Th>Start</Th>
+								<Th>Fin</Th>
+								<Th>Prix</Th>
+							</Tr>
+						</Thead>
+						<Tbody>
+							{Object.keys(displayArrayMousem).map((key) => (
+								<DisplayComp key={key} obj={displayArrayMousem[key]} />
+							))}
+						</Tbody>
+					</Table>
+				</TableContainer>
+			</div>
 			<CreateOne type={"mousem"} />
-		</div>
+		</>
 	);
 }
 
 const DisplayComp = ({ obj }) => {
 	return (
-		<tr>
-			<td>{obj.mousemName}</td>
-			<td>{obj.mousemNum}</td>
-			<td>{obj.mousemCount}</td>
-			<td>{obj.mousemStart}</td>
-			<td>{obj.mousemFin}</td>
-			<td>{obj.mousemPrix}</td>
-		</tr>
+		<Tr>
+			<Td>{obj.mousemName}</Td>
+			<Td>{obj.mousemNum}</Td>
+			<Td>{obj.mousemCount}</Td>
+			<Td>{obj.mousemStart}</Td>
+			<Td>{obj.mousemFin}</Td>
+			<Td>{obj.mousemPrix}</Td>
+		</Tr>
 	);
 };
 

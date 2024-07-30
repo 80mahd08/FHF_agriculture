@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 import { useFirestore } from "../contexts/FirestoreContext";
+import {
+	Button,
+	FormControl,
+	FormHelperText,
+	FormLabel,
+	Input,
+	Modal,
+	ModalBody,
+	ModalCloseButton,
+	ModalContent,
+	ModalFooter,
+	ModalHeader,
+	ModalOverlay,
+	useDisclosure,
+} from "@chakra-ui/react";
+import { mergeStyles, styles } from "fhf-react";
 
 const CreateOne = ({ type }) => {
 	const { submitData } = useFirestore();
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const [errorMessage, setErrorMessage] = useState("");
 
 	const FIELD_NAMES = {
 		DWA: {
@@ -33,21 +51,14 @@ const CreateOne = ({ type }) => {
 			!data[DATE_START] ||
 			!data[DATE_FIN]
 		) {
-			Swal.fire({
-				icon: "error",
-				title: "Missing Fields",
-				text: "All fields are required for Dwa.",
-			});
+			setErrorMessage("All fields are required for Dwa.");
+
 			return false;
 		}
 		const dateStart = new Date(data[DATE_START]);
 		const dateFin = new Date(data[DATE_FIN]);
 		if (dateStart > dateFin) {
-			Swal.fire({
-				icon: "error",
-				title: "Invalid Dates",
-				text: "Start date must be before the end date for Dwa.",
-			});
+			setErrorMessage("Start date must be before the end date for Dwa.");
 			return false;
 		}
 		return true;
@@ -63,11 +74,8 @@ const CreateOne = ({ type }) => {
 			!data[FIN] ||
 			!data[PRIX]
 		) {
-			Swal.fire({
-				icon: "error",
-				title: "Missing Fields",
-				text: "All fields are required for Mousem.",
-			});
+			setErrorMessage("All fields are required for Mousem.");
+
 			return false;
 		}
 		if (
@@ -77,11 +85,9 @@ const CreateOne = ({ type }) => {
 			isNaN(data[FIN]) ||
 			isNaN(data[PRIX])
 		) {
-			Swal.fire({
-				icon: "error",
-				title: "Invalid Numbers",
-				text: "Num, Count, Start, Fin, and Prix must be valid numbers for Mousem.",
-			});
+			setErrorMessage(
+				"Num, Count, Start, Fin, and Prix must be valid numbers for Mousem."
+			);
 			return false;
 		}
 		return true;
@@ -91,7 +97,6 @@ const CreateOne = ({ type }) => {
 		e.preventDefault();
 		const formData = new FormData(e.target);
 		const data = Object.fromEntries(formData.entries());
-		console.log(data);
 		if (validateFn(data)) {
 			submitData(type, data);
 			Swal.fire({
@@ -106,46 +111,29 @@ const CreateOne = ({ type }) => {
 		const { NAME, TYPE, ELKMIYA, DATE_START, DATE_FIN } = FIELD_NAMES.DWA;
 		return (
 			<form onSubmit={(e) => handleSubmit(e, validateDataDwa)}>
-				<table>
-					<tbody>
-						<tr>
-							<td>Name:</td>
-							<td>
-								<input type="text" name={NAME} />
-							</td>
-						</tr>
-						<tr>
-							<td>Type:</td>
-							<td>
-								<input type="text" name={TYPE} />
-							</td>
-						</tr>
-						<tr>
-							<td>Elkmiya:</td>
-							<td>
-								<input type="text" name={ELKMIYA} />
-							</td>
-						</tr>
-						<tr>
-							<td>Date Start:</td>
-							<td>
-								<input type="date" name={DATE_START} />
-							</td>
-						</tr>
-						<tr>
-							<td>Date Fin:</td>
-							<td>
-								<input type="date" name={DATE_FIN} />
-							</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>
-								<input type="submit" value="Submit" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<FormControl>
+					<FormLabel>Name:</FormLabel>
+					<Input type="text" name={NAME} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Type:</FormLabel>
+					<Input type="text" name={TYPE} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Elkmiya:</FormLabel>
+					<Input type="text" name={ELKMIYA} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Date Start:</FormLabel>
+					<Input type="date" name={DATE_START} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Date Fin:</FormLabel>
+					<Input type="date" name={DATE_FIN} />
+				</FormControl>
+				<Button color={"white"} bg={"rgb(182, 157, 230)"} mt={10} type="submit">
+					Submit
+				</Button>
 			</form>
 		);
 	};
@@ -154,59 +142,60 @@ const CreateOne = ({ type }) => {
 		const { NAME, NUM, COUNT, START, FIN, PRIX } = FIELD_NAMES.MOUSEM;
 		return (
 			<form onSubmit={(e) => handleSubmit(e, validateDataMousem)}>
-				<table>
-					<tbody>
-						<tr>
-							<td>Name:</td>
-							<td>
-								<input type="text" name={NAME} />
-							</td>
-						</tr>
-						<tr>
-							<td>Num:</td>
-							<td>
-								<input type="text" name={NUM} />
-							</td>
-						</tr>
-						<tr>
-							<td>Count:</td>
-							<td>
-								<input type="text" name={COUNT} />
-							</td>
-						</tr>
-						<tr>
-							<td>Start:</td>
-							<td>
-								<input type="text" name={START} />
-							</td>
-						</tr>
-						<tr>
-							<td>Fin:</td>
-							<td>
-								<input type="text" name={FIN} />
-							</td>
-						</tr>
-						<tr>
-							<td>Prix:</td>
-							<td>
-								<input type="text" name={PRIX} />
-							</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>
-								<input type="submit" value="Submit" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<FormControl>
+					<FormLabel>Name:</FormLabel>
+					<Input type="text" name={NAME} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Num:</FormLabel>
+					<Input type="text" name={NUM} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Count:</FormLabel>
+					<Input type="text" name={COUNT} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Start:</FormLabel>
+					<Input type="text" name={START} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Fin:</FormLabel>
+					<Input type="text" name={FIN} />
+				</FormControl>
+				<FormControl>
+					<FormLabel>Prix:</FormLabel>
+					<Input type="text" name={PRIX} />
+				</FormControl>
+				<Button color={"white"} bg={"rgb(182, 157, 230)"} mt={10} type="submit">
+					Submit
+				</Button>
 			</form>
 		);
 	};
 
 	return (
-		<div className="form-group">
-			{type === "dwa" ? renderDwaForm() : renderMousemForm()}
+		<div
+			className="form-group"
+			style={mergeStyles(styles.dispFlex, { justifyContent: "center" })}>
+			<Button color={"white"} bg={"rgb(182, 157, 230)"} onClick={onOpen}>
+				Open Modal
+			</Button>
+			<Modal blockScrollOnMount={true} isOpen={isOpen} onClose={onClose}>
+				<ModalOverlay />
+				<ModalContent>
+					<ModalHeader
+						color={"rgb(182, 157, 230)"}
+						textTransform={"capitalize"}
+						textAlign={"center"}>
+						Add Row for {type}
+					</ModalHeader>
+					<ModalCloseButton />
+					<ModalBody>
+						<p style={{ color: "red" }}>{errorMessage && errorMessage}</p>
+						{type === "dwa" ? renderDwaForm() : renderMousemForm()}
+					</ModalBody>
+				</ModalContent>
+			</Modal>
 		</div>
 	);
 };

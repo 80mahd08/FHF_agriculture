@@ -21,11 +21,8 @@ export function AuthProvider({ children }) {
 	const [isEmailUser, setIsEmailUser] = useState(false);
 	const [isGoogleUser, setIsGoogleUser] = useState(false);
 	const [loading, setLoading] = useState(true);
-
 	useEffect(() => {
-		console.log("Auth state change useEffect triggered");
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
-			console.log("onAuthStateChanged callback triggered", user);
 			if (user) {
 				initializeUser(user);
 			} else {
@@ -38,7 +35,6 @@ export function AuthProvider({ children }) {
 	}, []);
 
 	const initializeUser = async (user) => {
-		console.log("Initializing user", user);
 		setCurrentUser({ ...user });
 
 		const isEmail = user.providerData.some(
@@ -62,45 +58,36 @@ export function AuthProvider({ children }) {
 	};
 
 	const registerUserWithEmail = async (email, password) => {
-		setLoading(true);
 		try {
 			const { user } = await createUserWithEmailAndPassword(
 				auth,
 				email,
 				password
 			);
-			console.log("User created with email", user);
 			await createDocumentStructure(user.uid);
 			initializeUser(user);
 		} catch (error) {
 			console.error("Error creating user with email:", error);
-			setLoading(false);
 		}
 	};
 
 	const registerUserWithGoogle = async () => {
-		setLoading(true);
 		try {
 			const provider = new GoogleAuthProvider();
 			const { user } = await signInWithPopup(auth, provider);
-			console.log("User signed in with Google", user);
 			await createDocumentStructure(user.uid);
 			initializeUser(user);
 		} catch (error) {
 			console.error("Error signing in with Google:", error);
-			setLoading(false);
 		}
 	};
 
 	const createDocumentStructure = async (uid) => {
 		const userRef = doc(db, "agri", uid);
-		console.log("Creating document structure for userRef:", userRef.path);
 
 		try {
 			// Attempt to set the document with merge option to update if it exists
 			await setDoc(userRef, {}, { merge: true });
-
-			console.log("Document structure created or updated successfully!");
 
 			// Create subcollections within the user document (empty)
 			const subcollections = ["zitoun", "lim", "kook"];
@@ -111,9 +98,6 @@ export function AuthProvider({ children }) {
 					const subcollectionRef = collection(userRef, subcollection);
 					const docRef = doc(subcollectionRef, docName);
 					await setDoc(docRef, {}, { merge: true });
-					console.log(
-						`Subcollection ${subcollection} and document ${docName} created or updated`
-					);
 				}
 			}
 		} catch (error) {
@@ -129,6 +113,7 @@ export function AuthProvider({ children }) {
 		setCurrentUser,
 		registerUserWithEmail,
 		registerUserWithGoogle,
+		setLoading,
 	};
 
 	return (

@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuth } from "../contexts/AuthContext";
-import { SignInWithEmailAndPassword, SignInWithGoogle } from "../auth";
-import googleIcon from "../assets/google-icon.svg";
+import { CreateUserWithEmailAndPassword, SendEmailVerification } from "../auth";
 
-function Login() {
-	const [isSigningIn, setIsSigningIn] = useState(false);
+function Signup() {
 	const navigate = useNavigate();
 	const { userLoggedIn, setLoading } = useAuth();
+	const [isRegistering, setIsRegistering] = useState(false);
 
 	useEffect(() => {
 		if (userLoggedIn) {
@@ -25,46 +24,32 @@ function Login() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const { email, password } = e.target;
 		setLoading(true);
-		if (!isSigningIn) {
-			setIsSigningIn(true);
-			try {
-				await SignInWithEmailAndPassword(email.value, password.value);
+		const { email, password, confirmPassword } = e.target;
 
-				navigate("/home");
-				setLoading(false);
-			} catch (error) {
-				setLoading(false);
-				let errorText = error.message;
-
-				let endPos = errorText.indexOf(")");
-				let startPos = errorText.indexOf("/") + 1;
-
-				let errorSubstring = errorText.substring(startPos, endPos);
-
-				errorSubstring = errorSubstring.replace("-", " ");
-				Swal.fire({
-					title: "Error",
-					text: errorSubstring,
-					icon: "error",
-				});
-				setIsSigningIn(false);
-				return;
-			}
+		if (password.value !== confirmPassword.value) {
+			Swal.fire({
+				title: "Error",
+				text: "Passwords do not match",
+				icon: "error",
+			});
+			setLoading(false);
+			return;
 		}
-	};
 
-	const handleSubmitUsingGoogle = async (e) => {
-		e.preventDefault();
-		setLoading(true);
-		if (!isSigningIn) {
-			setIsSigningIn(true);
+		if (!isRegistering) {
+			setIsRegistering(true);
 			try {
-				await SignInWithGoogle();
-
+				await CreateUserWithEmailAndPassword(email.value, password.value);
+				await SendEmailVerification();
 				navigate("/home");
 				setLoading(false);
+
+				Swal.fire({
+					title: "Success",
+					text: "Account created successfully! Please verify your email before logging in.",
+					icon: "success",
+				});
 			} catch (error) {
 				setLoading(false);
 				let errorText = error.message;
@@ -80,7 +65,7 @@ function Login() {
 					text: errorSubstring,
 					icon: "error",
 				});
-				setIsSigningIn(false);
+				setIsRegistering(false);
 				return;
 			}
 		}
@@ -93,7 +78,7 @@ function Login() {
 				<h4>
 					We are <span>FHF-agri</span>
 				</h4>
-				<p>Welcome back! Log in to your account</p>
+				<p>Welcome ! Create your account</p>
 				<div className="floating-label">
 					<input
 						placeholder="Email"
@@ -157,18 +142,49 @@ function Login() {
 						</svg>
 					</div>
 				</div>
-				<div className="btns">
-					<button className="googleBtn" onClick={handleSubmitUsingGoogle}>
-						<img src={googleIcon} alt="" />
-					</button>
-					<button type="submit">Log in</button>
+				<div className="floating-label">
+					<input
+						placeholder="Confirm Password"
+						type="password"
+						name="confirmPassword"
+						id="confirmPassword"
+						autoComplete="off"
+					/>
+					<label htmlFor="confirmPassword">Confirm Password:</label>
+					<div className="icon">
+						<svg
+							enableBackground="new 0 0 24 24"
+							version="1.1"
+							viewBox="0 24 24"
+							xmlSpace="preserve"
+							xmlns="http://www.w3.org/2000/svg">
+							<rect
+								className="st0"
+								style={{ fill: "none" }}
+								width="24"
+								height="24"></rect>
+							<path
+								className="st1"
+								style={{ fill: "#010101" }}
+								d="M19,21H5V9h14V21z M6,20h12V10H6V20z"></path>
+							<path
+								className="st1"
+								style={{ fill: "#010101" }}
+								d="M16.5,10h-1V7c0-1.9-1.6-3.5-3.5-3.5S8.5,5.1,8.5,7v3h-1V7c0-2.5,2-4.5,4.5-4.5s4.5,2,4.5,4.5V10z"></path>
+							<path
+								className="st1"
+								style={{ fill: "#010101" }}
+								d="m12 16.5c-0.8 0-1.5-0.7-1.5-1.5s0.7-1.5 1.5-1.5 1.5 0.7 1.5 1.5-0.7 1.5-1.5 1.5zm0-2c-0.3 0-0.5 0.2-0.5 0.5s0.2 0.5 0.5 0.5 0.5-0.2 0.5-0.5-0.2-0.5-0.5-0.5z"></path>
+						</svg>
+					</div>
 				</div>
+				<button type="submit">Sign up</button>
 				<div className="messageInbut">
-					Don't have an account yet ?<Link to="/signup">signup</Link>
+					Already have an account ?<Link to="/login">log in</Link>
 				</div>
 			</form>
 		</div>
 	);
 }
 
-export default Login;
+export default Signup;
