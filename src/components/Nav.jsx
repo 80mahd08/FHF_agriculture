@@ -1,15 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {
-	Menu,
-	MenuButton,
-	MenuList,
-	MenuItem,
-	MenuItemOption,
-	MenuGroup,
-	MenuOptionGroup,
-	MenuDivider,
-} from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 
@@ -35,19 +26,6 @@ function Nav() {
 				</NavLink>
 			</MenuList>
 		</Menu>
-		// <nav>
-		// 	<ul>
-		// 		<li>
-		// 			<NavLink to="/home/zitoun">zitoun</NavLink>
-		// 		</li>
-		// 		<li>
-		// 			<NavLink to="/home/kook">kook</NavLink>
-		// 		</li>
-		// 		<li>
-		// 			<NavLink to="/home/lim">lim</NavLink>
-		// 		</li>
-		// 	</ul>
-		// </nav>
 	);
 }
 

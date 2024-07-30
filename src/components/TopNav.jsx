@@ -1,6 +1,6 @@
 import { mergeRefs, mergeStyles, styles, useHover } from "fhf-react";
 import React, { useEffect, useState } from "react";
-import placeHolderImg from "../../public/placeholderProfImg.jpg";
+import placeHolderImg from "/placeholderProfImg.jpg";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useAuth } from "../contexts/AuthContext";

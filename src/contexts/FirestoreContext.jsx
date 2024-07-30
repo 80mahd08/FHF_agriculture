@@ -25,7 +25,6 @@ export function FirestoreProvider({ children }) {
 	// Fetch data using useCollectionData directly inside the component
 	const query = collection(db, `/agri/${currentUser.uid}/${pageName}/`);
 	const [snapshot, loadingFirestore, error] = useCollectionData(query);
-
 	useEffect(() => {
 		setLoading(loadingFirestore !== undefined ? loadingFirestore : true);
 		if (snapshot) {
@@ -70,7 +69,6 @@ export function FirestoreProvider({ children }) {
 		}
 		setLoading(false);
 	};
-
 	const value = {
 		pageName,
 		displayArrayMousem,

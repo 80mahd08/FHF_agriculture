@@ -13,6 +13,7 @@ import {
 
 function Mousem() {
 	const { pageName, displayArrayMousem } = useFirestore();
+	console.log(Object.keys(displayArrayMousem));
 	return (
 		<>
 			<div className="table-div">
